@@ -52,7 +52,7 @@ public class BankAcct{
     {
         Scanner s=new Scanner(System.in);
         int ch;
-        BankAcct b;//=new BankAcct();
+        BankAcct b=new BankAcct();//=new BankAcct();
         while(true)
         {
             System.out.println("\n\t1. Create account\n\t2. Intialize Interest rate\n\t3. Change Interest rate\n\t4. Display Interest rate\n\t5. Get Balance\n\t6. Calculate Interest\n\t7. Exit");
@@ -61,23 +61,30 @@ public class BankAcct{
             switch(ch)
             {
                 case 1:b=new BankAcct(s);
+                       break;
                 case 2:BankAcct.initialize_interest(s);
+                        break;
                 case 3:BankAcct.setInterest(s);
+                break;
                 case 4:BankAcct.show_interest_rate();
+                break;
                 case 5:
-                try{
-                    b.get_balance();
+                if(b.accountNum!=null)
+                {
+                    System.out.println("Your bank account balance = "+b.get_balance());
                 }
-                catch (Exception e)
+                else
                 {
                     System.out.println("Create a account fisrt please!!");
                 }
+                break;
                 case 6:
-                    try {
-                        b.get_interest();
-                    } catch (Exception e) {
-                        System.out.println("Create a account fisrt please!!");
-                    }
+                if (b.accountNum != null) {
+                    System.out.println("Your bank account Interest = " + b.get_interest());
+                } else {
+                    System.out.println("Create a account fisrt please!!");
+                }
+                break;
                 default:System.exit(0);
             }
         }
