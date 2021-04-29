@@ -9,32 +9,39 @@ class Account{
     long phn_num;
     static int last_id=0;
     boolean privileged;
-    ArrayList<Double> loans=new ArrayList();
+    ArrayList<Double> loans=new ArrayList<Double>();
     public static void show_credit_limit()
     {
         System.out.println("Normal Credit limit:-"+credit_limit);
         System.out.println("Priviledged Credit limit:-" + credit_limit_priviledged);
     }
-    Account(Scanner s)
+    void get_data(Scanner sc)
     {
+        //Scanner sc=new Scanner(System.in);
         System.out.println("Enter Name:-");
-        name = s.nextLine();
+        name = sc.nextLine();
         System.out.print("Enter phone number :- ");
-        phn_num = s.nextLong();
+        phn_num = sc.nextLong();
         last_id+=1;
         Date d = new Date();
         int y = d.getYear() + 1900;
         String sr = String.format("%03d", last_id);
         customer_id = new String(y + sr);
         System.out.println("What type of user are you?\n 1. Priviledged \n 2. Normal");
-        int ch=s.nextInt();
+        int ch=sc.nextInt();
         if(ch==1)
         {
             privileged=true;
+            available=credit_limit_priviledged;
         }
-        loan_amount=-1;
-        available=-1;
+        else
+        {
+            privileged=false;
+            available=credit_limit;
+        }
+        loan_amount=0;
         System.out.println("Account successfully created!!\nCustomer ID:-"+customer_id);
+        //sc.close();
     }
     void show_details()
     {
@@ -72,7 +79,7 @@ class Account{
     }
 }
 public class Bank {
-    ArrayList<Account> list=new ArrayList();
+    ArrayList<Account> list=new ArrayList<Account>();
     private int is_account_present(String id)
     {
         for(int i=0;i<list.size();i++)
@@ -87,8 +94,9 @@ public class Bank {
     }
     void creat_account(Scanner s)
     {
-        Account a=new Account(s);
-        a.show_details();
+        Account a=new Account();
+        a.get_data(s);
+       // a.show_details();
         list.add(a);
     }
     void show_details(Scanner s)
@@ -122,10 +130,10 @@ public class Bank {
             return;
         }
     }
-    // public static void Show_credit()
-    // {
-    //     show_credit_limit();
-    // }
+    public static void Show_credit()
+    {
+        Account.show_credit_limit();
+    }
     public static void main(String args[])
     {
         int ch;
@@ -133,9 +141,9 @@ public class Bank {
         Bank b=new Bank();
         while(true)
         {
-            System.out.println("\n\t1. Create Account\n\t2. Show Account Details\n\t 3. Show loan and available loan amount\n\t4. Get a Loan\n\t5. Show credit amount limit\n\t6. Exit\nEnter your choice");
+            System.out.println("\n\t1. Create Account\n\t2. Show Account Details\n\t3. Show loan and available loan amount\n\t4. Get a Loan\n\t5. Show credit amount limit\n\t6. Exit\nEnter your choice");
             ch=s.nextInt();
-           // s.next();
+            s.nextLine();
             switch(ch)
             {
                 case 1:
@@ -150,9 +158,9 @@ public class Bank {
                 case 4:
                 b.get_loan(s);
                 break;
-                // case 5:
-                // Show_credit();
-                // break;
+                case 5:
+                Show_credit();
+                break;
                 default:
                 System.exit(0);
             }

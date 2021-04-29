@@ -18,8 +18,8 @@ public class BankAcct{
         accountNum = new String(y + sr);
         System.out.println("Enter the amount:-");
         amount = s.nextDouble();
-        interest = amount*interest_rate/100;
-        amount+=interest;
+        // interest = amount*interest_rate/100;
+        // amount+=interest;
         s.nextLine();
         System.out.println("Account Successfully created!");
         System.out.println("Your Bank Account Number:-"+accountNum);
@@ -42,10 +42,12 @@ public class BankAcct{
     }
     double get_balance()
     {
-        return amount;
+        return amount+interest;
     }
-    double get_interest()
+    double calculate_interest(int year,int months)
     {
+        double time = year + (float)months / (float)12; //calculating the time required
+        interest = ( amount * time * interest_rate) / 100; //calculating the interest
         return interest;
     }
     public static void main(String args[])
@@ -80,7 +82,11 @@ public class BankAcct{
                 break;
                 case 6:
                 if (b.accountNum != null) {
-                    System.out.println("Your bank account Interest = " + b.get_interest());
+                    System.out.println("Enter the year:");
+                    int year=s.nextInt();
+                    System.out.println("Enter the month");
+                    int months=s.nextInt();
+                    System.out.println("Your bank account Interest = " + b.calculate_interest(year, months));
                 } else {
                     System.out.println("Create a account fisrt please!!");
                 }

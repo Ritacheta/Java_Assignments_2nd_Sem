@@ -1,6 +1,6 @@
 //package Java_Assignment_2.assignment_3;
 import java.util.*;
-public class Assignment_3 {
+public class StringArray {
     // count number of "a"
     static public void count_A(String s)
     {
@@ -45,11 +45,11 @@ public class Assignment_3 {
 
     //to tokenize the string
     static public void tokenize (String s) {
-        StringTokenizer st = new StringTokenizer(s, "@.");
+        String[] tokens=s.split("[\\s+.@]");
         System.out.println ("Tokens :- ");
-        while(st.hasMoreTokens()) {
-            System.out.println (st.nextToken());
-        }
+        for(String w:tokens){  
+            System.out.println(w);  
+            } 
     }
     
     public static void main (String args[]) {
@@ -57,7 +57,7 @@ public class Assignment_3 {
         String s = new String ();
         while(true) {
             int ch;
-            System.out.print ("1. Enter a new String\n2. count number of a's\n3. count number of ands\n4. check start with 'The'\n5. Convert to character array\n6. Tokenize\n7. Exit\nEnter Choice :- ");
+            System.out.print ("\n\t1. Enter a new String\n\t2. count number of a's\n\t3. count number of ands\n\t4. check start with 'The'\n\t5. Convert to character array\n\t6. Tokenize\n\t7. Exit\nEnter Choice :- ");
             ch = sc.nextInt();
             switch (ch) {
                 case 1: Scanner sc1 = new Scanner (System.in);
