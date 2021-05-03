@@ -6,6 +6,62 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch University",
+            "request": "launch",
+            "mainClass": "University",
+            "projectName": "Java_Assignments_2nd_Sem_5a4f7c0b"
+        },
+        {
+            "type": "java",
+            "name": "Launch StringArray",
+            "request": "launch",
+            "mainClass": "StringArray",
+            "projectName": "Java_Assignments_2nd_Sem_5a4f7c0b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Metric",
+            "request": "launch",
+            "mainClass": "Metric",
+            "projectName": "Java_Assignments_2nd_Sem_5a4f7c0b"
+        },
+        {
+            "type": "java",
+            "name": "Launch BankAcct",
+            "request": "launch",
+            "mainClass": "BankAcct",
+            "projectName": "Java_Assignments_2nd_Sem_5a4f7c0b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Store",
+            "request": "launch",
+            "mainClass": "Store",
+            "projectName": "Java_Assignments_2nd_Sem_5a4f7c0b"
+        },
+        {
+            "type": "java",
+            "name": "Launch ThreadStore",
+            "request": "launch",
+            "mainClass": "ThreadStore",
+            "projectName": "Java_Assignments_2nd_Sem_5a4f7c0b"
+        },
+        {
+            "type": "java",
+            "name": "Launch GFG",
+            "request": "launch",
+            "mainClass": "GFG",
+            "projectName": "Java_Assignments_2nd_Sem_5a4f7c0b"
+        },
+        {
+            "type": "java",
+            "name": "Launch ProducerConsumer",
+            "request": "launch",
+            "mainClass": "ProducerConsumer",
+            "projectName": "Java_Assignments_2nd_Sem_5a4f7c0b"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"

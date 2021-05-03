@@ -1,7 +1,12 @@
 {
     "java.project.sourcePaths": [
+        "src/java_assignments/Java_Assignment_2/assignment_8",
         "src/java_assignments/Java_Assignment_2/assignment_7",
+        "src/java_assignments/Java_Assignment_2/assignment_5",
         "src/java_assignments/Java_Assignment_2/assignment_4",
-        "src/java_assignments/Java_Assignment_2/assignment_5"
+        "src/java_assignments/Java_Assignment_2/assignment_3",
+        "src/java_assignments/Java_Assignment_2/assignment_2",
+        "src/java_assignments/Java_Assignment_2/assignment_1",
+        "src/java_assignments/Java_Assignment_2/assignment_6"
     ]
 }
